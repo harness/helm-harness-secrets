@@ -1,0 +1,7 @@
+mongodb:
+  password: ""
+
+timescaledb:
+  adminPassword: ""
+  postgresPassword: ""
+  standbyPassword: ""
