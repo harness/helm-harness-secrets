@@ -5,3 +5,10 @@ timescaledb:
   adminPassword: ""
   postgresPassword: ""
   standbyPassword: ""
+
+postgresdb:
+  adminPassword: ""
+
+sto:
+  appHarnessToken: ""
+  AppAuditJWTSecret: ""
