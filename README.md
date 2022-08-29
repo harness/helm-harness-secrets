@@ -1,1 +1,1 @@
-#Helm chart for harness-secrets
+src/secrets/README.md
