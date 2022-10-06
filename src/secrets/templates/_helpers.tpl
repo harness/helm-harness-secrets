@@ -13,4 +13,11 @@
     PATRONI_SUPERUSER_PASSWORD: {{ $timescaledbPostgresPassword }}
     PATRONI_REPLICATION_PASSWORD: {{ $timescaledbStandbyPassword }}
     PATRONI_admin_PASSWORD: {{ $timescaledbAdminPassword }}
+    lookerLicenseKey: {{ .Values.cdb.lookerLicenseKey }}
+    lookerMasterKey: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-secrets" "key" "lookerMasterKey" "providedValues" (list "cdb.lookerMasterKey") "length" 32 "context" $) }}
+    lookerClientSecret: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-secrets" "key" "lookerClientSecret" "providedValues" (list "cdb.lookerClientSecret") "length" 24 "context" $) }}
+    lookerTimescalePassword: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-secrets" "key" "lookerTimescalePassword" "providedValues" (list "cdb.lookerTimescalePassword") "length" 16 "context" $) }}
+    lookerSdkClientId: {{ .Values.cdb.lookerSdkClientId }}
+    lookerSdkClientSecret: {{ .Values.cdb.lookerSdkClientSecret }}
+    lookerEmbedSecret: {{ .Values.cdb.lookerEmbedSecret }}
 {{- end }}
