@@ -18,8 +18,10 @@
     lookerMasterKey: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-secrets" "key" "lookerMasterKey" "providedValues" (list "cdb.lookerMasterKey") "length" 32 "context" $) }}
     lookerClientSecret: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-secrets" "key" "lookerClientSecret" "providedValues" (list "cdb.lookerClientSecret") "length" 24 "context" $) }}
     lookerTimescalePassword: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-secrets" "key" "lookerTimescalePassword" "providedValues" (list "cdb.lookerTimescalePassword") "length" 16 "context" $) }}
-    lookerSdkClientId: {{ .Values.cdb.lookerSdkClientId | quote }}
-    lookerSdkClientSecret: {{ .Values.cdb.lookerSdkClientSecret | quote }}
-    lookerEmbedSecret: {{ .Values.cdb.lookerEmbedSecret }}
 {{- end }}
+{{- end }}
+{{- define "harnesssecrets.generateLookerSecrets" }}
+    lookerSdkClientId: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-looker-secrets" "key" "lookerSdkClientId" "providedValues" (list "cdb.lookerSdkClientId") "length" 16 "context" $) }}
+    lookerSdkClientSecret: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-looker-secrets" "key" "lookerSdkClientSecret" "providedValues" (list "cdb.lookerSdkClientSecret") "length" 16 "context" $) }}
+    lookerEmbedSecret: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-looker-secrets" "key" "lookerEmbedSecret" "providedValues" (list "cdb.lookerEmbedSecret") "length" 16 "context" $) }}
 {{- end }}
