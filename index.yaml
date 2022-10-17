@@ -3,6 +3,20 @@ entries:
   harness-secrets:
   - apiVersion: v2
     appVersion: 0.0.0
+    created: "2022-10-17T18:57:11.997271561Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 2.x.x
+    description: A Helm chart to create Harness secrets
+    digest: 2998c4ebe5d2c6a992b1a79c7feac9fc56ea4f31e7db07213a5495c9aa0eefea
+    name: harness-secrets
+    type: application
+    urls:
+    - https://github.com/harness/helm-harness-secrets/releases/download/harness-secrets-0.2.4/harness-secrets-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v2
+    appVersion: 0.0.0
     created: "2022-10-12T15:48:55.732658229Z"
     dependencies:
     - name: common
@@ -71,4 +85,4 @@ entries:
     urls:
     - https://github.com/harness/helm-harness-secrets/releases/download/harness-secrets-0.1.1/harness-secrets-0.1.1.tgz
     version: 0.1.1
-generated: "2022-10-12T15:48:55.732674429Z"
+generated: "2022-10-17T18:57:11.997292861Z"
