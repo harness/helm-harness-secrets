@@ -16,12 +16,12 @@
 {{ if .Values.global.ngcustomdashboard.enabled }}
     lookerLicenseKey: {{ .Values.cdb.lookerLicenseKey | quote }}
     lookerMasterKey: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-secrets" "key" "lookerMasterKey" "providedValues" (list "cdb.lookerMasterKey") "length" 32 "context" $) }}
-    lookerClientSecret: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-secrets" "key" "lookerClientSecret" "providedValues" (list "cdb.lookerClientSecret") "length" 24 "context" $) }}
-    lookerTimescalePassword: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-secrets" "key" "lookerTimescalePassword" "providedValues" (list "cdb.lookerTimescalePassword") "length" 16 "context" $) }}
+    redshiftPassword: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-secrets" "key" "redshiftPassword" "providedValues" (list "cdb.redshiftPassword") "length" 16 "context" $) }}
 {{- end }}
 {{- end }}
 {{- define "harnesssecrets.generateLookerSecrets" }}
-    lookerSdkClientId: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-looker-secrets" "key" "lookerSdkClientId" "providedValues" (list "cdb.lookerSdkClientId") "length" 16 "context" $) }}
-    lookerSdkClientSecret: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-looker-secrets" "key" "lookerSdkClientSecret" "providedValues" (list "cdb.lookerSdkClientSecret") "length" 16 "context" $) }}
+    lookerClientId: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-looker-secrets" "key" "lookerClientId" "providedValues" (list "cdb.lookerClientId") "length" 20 "context" $) }}
+    lookerClientSecret: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-looker-secrets" "key" "lookerClientSecret" "providedValues" (list "cdb.lookerClientSecret") "length" 24 "context" $) }}
     lookerEmbedSecret: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-looker-secrets" "key" "lookerEmbedSecret" "providedValues" (list "cdb.lookerEmbedSecret") "length" 16 "context" $) }}
+    lookerSignupUrl: {{ include "common.secrets.passwords.manage" (dict "secret" "harness-looker-secrets" "key" "lookerSignupUrl" "providedValues" (list "cdb.lookerSignupUrl") "length" 16 "context" $) }}
 {{- end }}
